@@ -3,79 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inerium - Читоды для игр</title>
+    <title>The Scary Mafia - Игра</title>
     <style>
         body {
             margin: 0;
-            overflow: hidden;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            background-color: #121212; /* Темный фон */
-            color: white; /* Белый текст */
+            background-image: url('https://cdn.pixabay.com/photo/2016/11/29/12/54/city-1867249_1280.jpg'); /* Пример темного фона, можно заменить на любой другой URL */
+            background-size: cover;
+            background-position: center;
         }
         h1 {
-            z-index: 10; /* Поверх анимации */
-            text-shadow: 0 0 10px #00ff00; /* Светящийся текст */
+            font-size: 48px;
+            text-shadow: 0 0 10px red;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            max-width: 600px;
+            line-height: 1.5;
+            text-shadow: 0 0 5px black;
         }
         .download-button {
-            z-index: 10; /* Поверх анимации */
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #00ff00; /* Зеленая кнопка */
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: red;
+            color: #fff;
             border: none;
             border-radius: 5px;
+            font-size: 20px;
             cursor: pointer;
-            font-size: 16px;
+            text-transform: uppercase;
             transition: background-color 0.3s;
         }
         .download-button:hover {
-            background-color: #00cc00; /* Более темный зеленый при наведении */
-        }
-        /* Анимация фона */
-        .background {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            background: radial-gradient(circle, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
-        }
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background-color: rgba(0, 255, 0, 0.6); /* Полупрозрачный зеленый цвет */
-            animation: move 10s linear infinite;
-        }
-        /* Анимация для движения частиц */
-        @keyframes move {
-            0% {
-                transform: translateY(0) translateX(0) scale(0.5);
-            }
-            100% {
-                transform: translateY(100vh) translateX(100vw) scale(1.5);
-            }
+            background-color: darkred;
         }
     </style>
 </head>
 <body>
-    <h1>Inerium: лучшие читоды для игр</h1>
-    <button class="download-button" onclick="downloadFile()">Скачать лаунчер</button>
+    <h1>The Scary Mafia</h1>
+    <p>Это увлекательная игра с механиками, где ваша главная задача — выжить до 6 утра. Мафия пытается вас достать, но не поддавайтесь! Вы можете прятаться и избегать мафии, чтобы остаться в живых.</p>
 
-    <!-- Анимационный фон -->
-    <div class="background">
-        <div class="circle" style="top: 10%; left: 20%; width: 50px; height: 50px;"></div>
-        <div class="circle" style="top: 30%; left: 50%; width: 80px; height: 80px;"></div>
-        <div class="circle" style="top: 70%; left: 10%; width: 40px; height: 40px;"></div>
-        <div class="circle" style="top: 90%; left: 80%; width: 60px; height: 60px;"></div>
-    </div>
+    <button class="download-button" onclick="downloadGame()">Скачать для Windows</button>
 
     <script>
-        function downloadFile() {
+        function downloadGame() {
             const link = document.createElement('a');
-            link.href = 'file.exe'; // Путь к файлу для скачивания
-            link.download = 'file.exe'; // Имя файла при сохранении
+            link.href = 'file.exe'; // Замените на путь к файлу установки игры
+            link.download = 'TheScaryMafia.exe'; // Имя файла при сохранении
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
